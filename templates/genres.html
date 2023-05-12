@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container-content">
+
+  <div class="container mt-3">
+    <h3>{{genre}}</h3>
+    <hr>
+
+    <div class="row">
+        {% for book_id, book_info in genre_books.items() %}
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <div class="card">
+              <img class="card-img-top" src="{{ book_info['image_url'] }}" alt="{{ book_info['title'] }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ book_info['title'] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ book_info['authors'] }}</h6>
+                
+                <p class="card-text"><strong>Genres:</strong> {{ book_info['genres'] }}</p>
+                <p class="card-text"><strong>Year:</strong> {{ book_info['year'] }}</p>
+
+                <p class="card-text"><strong>Average Rating:</strong> {{ book_info['average_rating'] }}</p>
+    
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+
+{% endblock %}

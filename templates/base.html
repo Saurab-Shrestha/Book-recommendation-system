@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ------------------------------ TAB ICON ------------------------------- -->
+    <link rel="icon" href="/static/img/favicon.ico">
+    <!-- ------------------------------ BOOTSTRAP ------------------------------ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- ----------------------------- CUSTOM CSS ------------------------------ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <!-- -------------------------------- FONT --------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <title>What To Read ? Collaborative Book Recommendation System</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+            <img src="static/icon.png" alt="LOGO" width="70" height="64" class="d-inline-block">
+            <span class="navbar-brand mt-5 h1" 
+            style="
+            color:white;
+            margin-left: 30px;
+            font-size: 1.9rem;
+            "> Collaborative Book Recommendation System  </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Genres
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/genres/youngadult">youngadult</a></li>
+                            <li><a class="dropdown-item" href="/genres/fiction">fiction</a></li>
+                            <li><a class="dropdown-item" href="/genres/fantasy">fantasy</a></li>
+                            <li><a class="dropdown-item" href="/genres/sciencefiction">sciencefiction</a></li>
+                            <li><a class="dropdown-item" href="/genres/romance">romance</a></li>
+                            <li><a class="dropdown-item" href="/genres/classics">classics</a></li>
+                            <li><a class="dropdown-item" href="/genres/paranormal">paranormal</a></li>
+                            <li><a class="dropdown-item" href="/genres/historicalfiction">historicalfiction</a></li>
+                            <li><a class="dropdown-item" href="/genres/contemporary">contemporary</a></li>
+                            <li><a class="dropdown-item" href="/genres/mystery">mystery</a></li>
+                            <li><a class="dropdown-item" href="/genres/thriller">thriller</a></li>
+                            <li><a class="dropdown-item" href="/genres/suspense">suspense</a></li>
+                            <li><a class="dropdown-item" href="/genres/crime">crime</a></li>
+                            <li><a class="dropdown-item" href="/genres/nonfiction">nonfiction</a></li>
+                            <li><a class="dropdown-item" href="/genres/history">history</a></li>
+                            <li><a class="dropdown-item" href="/genres/biography">biography</a></li>
+                            <li><a class="dropdown-item" href="/genres/memoir">memoir</a></li>
+                            <li><a class="dropdown-item" href="/genres/poetry">poetry</a></li>
+                            <li><a class="dropdown-item" href="/genres/chicklit">chicklit</a></li>
+                            <li><a class="dropdown-item" href="/genres/christian">christian</a></li>
+                            <li><a class="dropdown-item" href="/genres/travel">travel</a></li>
+                            <li><a class="dropdown-item" href="/genres/spirituality">spirituality</a></li>
+                            <li><a class="dropdown-item" href="/genres/philosophy">philosophy</a></li>
+                            <li><a class="dropdown-item" href="/genres/psychology">psychology</a></li>
+                            <li><a class="dropdown-item" href="/genres/horror">horror</a></li>
+                            <li><a class="dropdown-item" href="/genres/business">business</a></li>
+                            <li><a class="dropdown-item" href="/genres/science">science</a></li>
+                            <li><a class="dropdown-item" href="/genres/religion">religion</a></li>
+                            <li><a class="dropdown-item" href="/genres/selfhelp">selfhelp</a></li>
+                            <li><a class="dropdown-item" href="/genres/art">art</a></li>
+                            <li><a class="dropdown-item" href="/genres/music">music</a></li>
+                            <li><a class="dropdown-item" href="/genres/graphicnovels">graphicnovels</a></li>
+                            <li><a class="dropdown-item" href="/genres/comics">comics</a></li>
+                            <li><a class="dropdown-item" href="/genres/sports">sports</a></li>
+                            <li><a class="dropdown-item" href="/genres/manga">manga</a></li>
+                            <li><a class="dropdown-item" href="/genres/cookbooks">cookbooks</a></li>
+                            <li><a class="dropdown-item" href="/genres/books">books</a></li>
+                            <li><a class="dropdown-item" href="/genres/humorandcomedy">humorandcomedy</a></li>
+                            <li><a class="dropdown-item" href="/genres/gayandlesbian">gayandlesbian</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </nav>
+    <!-- ------------------------------- CONTENT ------------------------------- -->
+    {% block content %} {% endblock %}
+    <!-- ---------------------------------- - ---------------------------------- -->
+
+    <!-- ------------------------------- SCRIPTS ------------------------------- -->
+    {% block scripts %} {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js"
+            integrity="sha384-5mPQKoxJFoh9sE9CVJvzF/TQzTJxSMJX6g9yP/VME8+J9Cex+9if+MNwPklIeAFV"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
+            integrity="sha384-3ziFidri+qzq+HzO9f/1/CsWzs/5+Ozfy3JlyJSUrI5Lcwks2N9JbNHLXoMG2wNO"
+            crossorigin="anonymous"></script>
+</body>
+</html>
